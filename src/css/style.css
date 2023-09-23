@@ -1,0 +1,397 @@
+/* ========================================= Geral =================================================== */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('/src/imgs/culto_domingo_noite-4407.jpg') center/cover no-repeat,
+    black; /* Cor fixa */
+}
+
+.logo-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.logo-top img {
+  max-width: 120px;
+}
+
+h1 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+
+.pad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Espaçamento entre os pads */
+  margin-top: 30px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.pad {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(128, 128, 128, 0.5);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  outline: none;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.1s;
+  border: 2px solid #808080;
+}
+
+.pad.playing {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.pad.selected {
+  background-color: white;
+}
+
+.pad:hover {
+  background-color: #a0a0a0;
+}
+
+.logo-bottom.align-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-bottom img {
+  max-width: 120px;
+  position: absolute;
+  bottom: 87px; /* Ajuste essa distância conforme necessário */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
+menu {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.menu label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.menu select {
+  padding: 5px;
+  border-radius: 5px;
+  max-width: 100%;
+  width: 150px; /* Ajuste de largura responsiva */
+  background-color: rgba(128, 128, 128); /* Cor de fundo com opacidade */
+  color: white; /* Cor do texto */
+  border: 1px solid #808080; /* Borda cinza */
+}
+
+.preset-info { 
+  color: #dcdcdc;
+  font-style: italic;
+  text-align: center;
+  margin-top: 10px;
+} 
+
+/* Estilos para o versículo */
+.verse {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 20px;
+  position: absolute;
+  top: 50%;
+  right: 250px;
+  transform: translateY(-50%);
+}
+
+.verse-text {
+  font-family: 'Times New Roman', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #ffffff; /* Cor de texto bíblico */
+  text-align: right;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.verse-reference {
+  font-family: 'Times New Roman', serif;
+  font-size: 14px;
+  color: #ffffff; /* Cor de texto bíblico */
+  text-align: right;
+  margin: 0;
+  margin-top: 10px;
+}
+
+
+/* Estilos da tabela de keymaps */
+.info-table {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+  position: absolute;
+  top: 55%;
+  left: 400px;
+  transform: translateY(-50%);
+}
+
+.info-table {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+  position: absolute
+}
+
+.info-table {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: white;
+  position: absolute;
+}
+
+/* Esconde o keymapa em resoluções pequenas */
+@media screen and (max-width: 1349px) {
+  .info-table {
+    display: none;
+  }
+}
+
+/* Esconde o versículo em resoluções pequenas */
+@media screen and (max-width: 1349px) {
+  .verse {
+    display: none;
+  }
+}
+
+/*========================================= Estilos para resolução 1600x793 ======================================= */
+@media screen and (min-width: 1600px) {
+  .pad {
+    width: 100px;
+    height: 100px;
+  }
+
+  .logo-bottom img {
+    max-width: 120px;
+    position: absolute;
+    bottom: 87px; /* Ajuste essa distância conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .verse {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+    position: absolute;
+    top: 50%;
+    right: 250px;
+    transform: translateY(-50%);
+  }
+
+  .info-table {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    position: absolute;
+    top: 55%;
+    left: 400px;
+    transform: translateY(-50%);
+  }
+
+  /* Esconde o keymapa em resoluções pequenas */
+  @media screen and (max-width: 1349px) {
+    .info-table {
+      display: none;
+    }
+  }
+
+  /* Esconde o versículo em resoluções pequenas */
+  @media screen and (max-width: 1349px) {
+    .verse {
+      display: none;
+    }
+  }
+}
+
+/* =======================Estilos para resolução 1536x707============================== */
+@media screen and (min-width: 1536px) and (max-width: 1599px) {
+  .pad {
+    width: 100px; /* Exemplo de ajuste no tamanho dos pads */
+    height: 100px;
+  }
+
+  /* Ajuste outros estilos conforme necessário para telas grandes */
+  .logo-bottom img {
+    max-width: 120px;
+    position: absolute;
+    bottom: 8px; /* Ajuste essa distância conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .info-table {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    position: absolute;
+    top: 62%;
+    left: 400px;
+    transform: translateY(-50%);
+  }
+
+  .verse {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+    position: absolute;
+    top: 53%;
+    right: 230px;
+    transform: translateY(-50%);
+  }
+
+  /* Esconde o keymapa em resoluções pequenas */
+  @media screen and (max-width: 1500px) {
+    .info-table {
+      display: none;
+    }
+  }
+}
+
+/*=============================== 1366x ====================================== */
+@media screen and (min-width: 1366px) and (max-width: 1399px) {
+  .pad {
+    width: 100px; /* Exemplo de ajuste no tamanho dos pads */
+    height: 100px;
+  }
+
+  /* Ajuste outros estilos conforme necessário para telas grandes */
+  .logo-bottom img {
+    max-width: 120px;
+    position: absolute;
+    bottom: -50px; /* Ajuste essa distância conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .info-table {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    position: absolute;
+    top: 70%;
+    left: 300px;
+    transform: translateY(-50%);
+  }
+
+  .verse {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+    position: absolute;
+    top: 63%;
+    right: 130px;
+    transform: translateY(-50%);
+  }
+}
+
+/* Media Query para telas menores, como tablets */
+@media screen and (max-width: 768px) {
+  body {
+    text-align: center; /* Centralizar todo o conteúdo */
+  }
+
+  .menu {
+    text-align: center; /* Centralizar o menu */
+    margin-left: auto; /* Resetar a margem esquerda */
+  }
+  
+  .menu label {
+    display: block; /* Colocar cada rótulo e seleção em uma nova linha */
+    margin: 5px 0; /* Adicionar algum espaçamento entre eles */
+  }
+
+  .menu select {
+    width: 90%; /* Fazer com que o menu de seleção ocupe 100% da largura disponível */
+  }
+
+  .pad-container {
+    flex-direction: column; /* Empilhar os pads verticalmente */
+    align-items: center; /* Centralizar os pads horizontalmente */
+  }
+
+  .pad {
+    width: 80px; /* Reduzir o tamanho dos pads */
+    height: 80px;
+    font-size: 16px; /* Reduzir o tamanho da fonte nos pads */
+  }
+
+  .info-table {
+    display: none; /* Esconder a tabela de informações */
+  }
+  
+  .logo-bottom img {
+    max-width: 120px;
+    position: absolute;
+    bottom: 20px; /* Ajuste essa distância conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Media Query para iPads */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  body {
+    text-align: center; /* Centralizar todo o conteúdo */
+  }
+
+  .menu {
+    text-align: center; /* Centralizar o menu */
+    margin: 0 auto; /* Centralizar horizontalmente */
+  }
+
+  .pad-container {
+    flex-direction: column; /* Empilhar os pads verticalmente */
+  }
+
+  .pad {
+    width: 100px; /* Reduzir o tamanho dos pads */
+    height: 100px;
+    font-size: 16px; /* Reduzir o tamanho da fonte nos pads */
+  }
+
+  .info-table {
+    display: none; /* Esconder a tabela de informações */
+  }
+}
